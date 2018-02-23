@@ -19,12 +19,14 @@ Parts of the system (each in its own folder):
 - LoPy sensor: uses various sensors (currently hooked up to an Arduino) to sense data about the environment; communicates over LoRa
 - LoPy actuator: controls valves or other irrigation-relevant equipment. Receives data over LoRa.
 - Cloud server: communicates with the LoPy controller, processes data and decides when and what actuators to turn on.
-- Android app: tentative UI for the server - would show data, forecasts, allow manual override. 
+
 
 
 ## Current state
 
 Currently, the server does a very rudimentaty calculation to decide when to turn the actuators on - it decides only based on the ground humidity. Ideally, it'd use weather forecasts and more different measures and sensors; we didn't have time to get that working during the hackathon. For the same reasons, the app does not yet connect to the server. All of the data flow and logic between the LoPy components and the cloud server work, though - it just uses LEDs instead of turning actual valves because we didn't have, well.. valves.
+
+We didn't have the time to implement the app or visualization.
 
 ## Stretch goals
 
