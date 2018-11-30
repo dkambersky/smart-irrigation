@@ -49,29 +49,29 @@ def http_post(url):
 
 
 
-"""this also works"""
-stream = s.makefile()
-responseLength = 0
+# """this also works"""
+# stream = s.makefile()
+# responseLength = 0
 
-# Read Header
-while True:
-    data = stream.readline()
-    if data.startswith('Content-Length'):
-        responseLength = data.split(' ')[1]
-    print(data)
-    if data == '\r\n':
-        break
+# # Read Header
+# while True:
+#     data = stream.readline()
+#     if data.startswith('Content-Length'):
+#         responseLength = data.split(' ')[1]
+#     print(data)
+#     if data == '\r\n':
+#         break
 
-print("responseLength is " + str(responseLength))
+# print("responseLength is " + str(responseLength))
 
-# Read Body
-response = ''
-for i in range(0, int(responseLength)):
-     response = response + stream.read(1)
+# # Read Body
+# response = ''
+# for i in range(0, int(responseLength)):
+#      response = response + stream.read(1)
 
-print(response)
+# print(response)
 
-s.close()
+# s.close()
 
 http_post('http://flaskserver.azurewebsites.net/hello')
 # http_post('http://httpbin.org/post')
